@@ -21,7 +21,7 @@ jobs:
     deploy:
       skip_cleanup: true
       provider: script
-      script: dotnet nuget push ./src/Docmosis.Render/bin/Release/Docmosis.Render.*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey $NUGET_API
+      script: dotnet nuget push ./src/Docmosis.Render/bin/Release/Docmosis.Render.*.nupkg -s https://api.nuget.org/v3/index.json -k $NUGET_API
       on:
         branch: master
     
