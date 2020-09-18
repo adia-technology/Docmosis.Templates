@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+*.user
+src/Docmosis.Render.Tests/bin
+src/Docmosis.Render.Tests/obj
+src/Docmosis.Render/bin
+src/Docmosis.Render/obj
