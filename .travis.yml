@@ -6,14 +6,14 @@ stages:
 - build
 jobs:
   include:
+  - stage: test
+    script: dotnet test
   - stage: build
     script: dotnet restore
   - stage: build
-    script: dotnet build -c Release
-  - stage: test
-    script: dotnet test
-before_deploy:
-- dotnet pack -c Release
+    script: dotnet build -c Release  
+  - stage: build
+    script: dotnet pack -c Release
 deploy:
   skip_cleanup: true
   provider: script
