@@ -1,12 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docmosis.Render", "Docmosis.Render\Docmosis.Render.csproj", "{412C0704-6ADC-4C71-8C09-41D1F3CB47F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docmosis.Render", "src\Docmosis.Render\Docmosis.Render.csproj", "{412C0704-6ADC-4C71-8C09-41D1F3CB47F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docmosis.Render.Tests", "Docmosis.Render.Tests\Docmosis.Render.Tests.csproj", "{8B4AE036-C6DA-4B12-867C-DE8700BA95AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docmosis.Render.Tests", "src\Docmosis.Render.Tests\Docmosis.Render.Tests.csproj", "{8B4AE036-C6DA-4B12-867C-DE8700BA95AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E37DD4E9-4F1E-4532-A888-63B6BD4CD1DA}"
 ProjectSection(SolutionItems) = preProject
-	..\README.md = ..\README.md
+	README.md = README.md
+	.travis.yml = .travis.yml
 EndProjectSection
 EndProject
 Global

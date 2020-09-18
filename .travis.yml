@@ -1,0 +1,26 @@
+language: csharp
+mono: none
+dotnet: 3.1
+stages:
+- test
+- build
+jobs:
+  include:
+  - stage: build
+    script: dotnet restore
+  - stage: build
+    script: dotnet build -c Release
+  - stage: test
+    script: dotnet test
+before_deploy:
+- dotnet pack -c Release
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: dotnet nuget push src/Docmosis.Render/bin/Release/Docmosis.Render.*.nupkg
+    -k $NUGET_API -s https://api.nuget.org/v3/index.json
+  on:
+    branch: master
+env:
+  global:
+    secure: hsZN1u8IOif2w3ryBcqB80i6xR+sEkJ3hq6xnX/32tAFChlQqdRAPYYYVbHrzle0DOSTkFnzxFXsNmX7BAnAw1HdtwsQG/eaP5850kMr9+pVjPzpqOy6NpjJP7FpW4Kq3O+A8hClb/SiXVXP4q0Wpf4hYP//KlqJow2xXVx0WyZ1qnC46T6TpkIqaVLKZylm0dhp9Xc3E3XD2VBuiZqIyMUiiiUK/O3Y8Xwj3PsQxmFifd4NC085h1+k2FRnWtBzD8+ngdUCBuIXiiP5/AgJpz0lDWhBNHwVfcAVhy1sJwsLmLxeO3EXf3jh5oETZMxqGdgJ+r8U3ToqjByM82a1fpmIYRdLfc/DE8zpnpXSm9eqtmo6CrHifAfI2SqF23SvC+MY9NQ8B7+jzIa33+Zz1b3T/mLfu2vQSTXN2Cielq2Dlyb5uD92rN7h5Pf/DtXbPtmCp4Rxo+1bxRVx/eHrImpOsps3nKK/NwxOsmE4sBBooTs0sTfHgcKfGa2gvvXVDuWtHTdzstUoxGZxb1BL2XfZPwpfzq582flj5C7qA6W9e2TYN/qEupINxeUHnrUiTdTM3wfPh7Tac3dkmbImq8pS/IyWBqknnzh3oLg4Rsy4vBSYpnT+eF8tDKEDY2AQw0NCPht2abJA9PWBK/9OBVFJ0V/okZ+Fe7f6vWZA9v8=
