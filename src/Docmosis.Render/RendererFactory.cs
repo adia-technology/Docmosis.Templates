@@ -2,7 +2,7 @@ using System;
 
 namespace Docmosis.Render
 {
-    public class RendererFactory
+    public class RendererFactory : IRendererFactory
     {
         public IRenderer CreateRenderer(Region region, string accessKey)
         {
