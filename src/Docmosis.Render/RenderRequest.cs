@@ -1,22 +1,22 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Docmosis.Render
 {
     public class RenderRequest
     {
-        [JsonPropertyName("accessKey")]
+        [JsonProperty("accessKey")]
         public string AccessKey { get; set; }
         
-        [JsonPropertyName("templateName")]
+        [JsonProperty("templateName")]
         public string TemplateName { get; set; }
         
-        [JsonPropertyName("outputName")]
+        [JsonProperty("outputName")]
         public string OutputName { get; set; }
         
-        [JsonPropertyName("outputFormat")]
+        [JsonProperty("outputFormat")]
         public string OutputFormat { get; set; }
   
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public object Data { get; set; }
     }
 }

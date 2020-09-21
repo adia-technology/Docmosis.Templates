@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace Docmosis.Render
 {
@@ -23,7 +23,7 @@ namespace Docmosis.Render
         {
             var request = (HttpWebRequest) WebRequest.Create(_docmosisRenderUri.ToString());
 
-            var renderRequest = JsonSerializer.Serialize(new RenderRequest()
+            var renderRequest = JsonConvert.SerializeObject(new RenderRequest()
             {
                 Data = renderData,
                 AccessKey = _accessKey,
