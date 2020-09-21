@@ -14,7 +14,7 @@ namespace Docmosis.Render.Tests
         public void Setup()
         {
             ConfigureRenderEndpoint();
-            _url = "https://eu.dws3.docmosis.com";//DocmosisServer.Urls.First();
+            _url = DocmosisServer.Urls.First();
         }
 
         [Test]
