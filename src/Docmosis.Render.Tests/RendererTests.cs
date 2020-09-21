@@ -8,16 +8,19 @@ namespace Docmosis.Render.Tests
 {
     public class RendererTests : MockedServerTests
     {
+        private string _url;
+
         [SetUp]
         public void Setup()
         {
             ConfigureRenderEndpoint();
+            _url = "https://eu.dws3.docmosis.com";//DocmosisServer.Urls.First();
         }
 
         [Test]
         public void RendererRendersTemplateToAValidPdf()
         {
-            var renderer = new Renderer(new Uri($"{DocmosisServer.Urls.First()}/api/render"), "some access key");
+            var renderer = new Renderer(new Uri($"{_url}/api/render"), "some access key");
             var response = renderer.RenderDocumentTemplate("some_document_template.docx", new
             {
                 someDate = "Test Data"

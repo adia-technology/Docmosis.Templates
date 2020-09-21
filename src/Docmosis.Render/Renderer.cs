@@ -57,8 +57,12 @@ namespace Docmosis.Render
                     return returnedStream;
                 }
             }
-            catch (WebException)
+            catch (WebException exception)
             {
+                if (exception.Response != null && ((HttpWebResponse) exception.Response).StatusCode == HttpStatusCode.BadRequest)
+                {
+                    throw new DocmosisRenderBadRequest();
+                }
                 throw new DocmosisRenderError();
             }
         }
