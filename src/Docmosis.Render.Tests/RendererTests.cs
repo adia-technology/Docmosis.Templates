@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using NUnit.Framework;
@@ -21,10 +22,9 @@ namespace Docmosis.Render.Tests
         public void RendererRendersTemplateToAValidPdf()
         {
             var renderer = new Renderer(new Uri($"{_url}/api/render"), "some access key");
-            var response = renderer.RenderDocumentTemplate("some_document_template.docx", new
+            var response = renderer.RenderDocumentTemplate("some_document_template.docx", new Dictionary<string, object>
             {
-                someDate = "Test Data"
-                
+                {"someDate","Test Data"}
             });
 
             using var file = File.Create("test.pdf");

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -44,7 +46,7 @@ namespace Docmosis.Render
             return (HttpWebResponse) request.GetResponse();
         }
 
-        public Stream RenderDocumentTemplate(string templateId, object data)
+        public Stream RenderDocumentTemplate(string templateId, IDictionary<string, object> data)
         {
             try
             {
