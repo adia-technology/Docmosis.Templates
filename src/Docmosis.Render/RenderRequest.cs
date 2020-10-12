@@ -18,5 +18,9 @@ namespace Docmosis.Render
   
         [JsonProperty("data")]
         public object Data { get; set; }
+        
+        [JsonProperty("devMode")]
+        public bool DevMode { get; set; }
+        
     }
 }

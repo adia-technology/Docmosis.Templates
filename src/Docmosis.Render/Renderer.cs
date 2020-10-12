@@ -12,6 +12,7 @@ namespace Docmosis.Render
     {
         private readonly Uri _docmosisRenderUri;
         private readonly string _accessKey;
+        private bool _debug;
 
         public Renderer(Uri docmosisRenderUri, string accessKey)
         {
@@ -31,7 +32,8 @@ namespace Docmosis.Render
                 AccessKey = _accessKey,
                 OutputFormat = OutputFormat,
                 OutputName = $"{Path.GetFileNameWithoutExtension(templateId)}.{OutputFormat}",
-                TemplateName = templateId
+                TemplateName = templateId,
+                DevMode = _debug
             });
 
             var data = new UTF8Encoding().GetBytes(renderRequest);
@@ -46,6 +48,11 @@ namespace Docmosis.Render
             return (HttpWebResponse) request.GetResponse();
         }
 
+        public void SetDebugMode(bool debug)
+        {
+            _debug = debug;
+        }
+        
         public Stream RenderDocumentTemplate(string templateId, IDictionary<string, object> data)
         {
             try
