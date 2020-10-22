@@ -9,7 +9,7 @@ using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
 using WireMock.Server;
 
-namespace Docmosis.Render.Tests
+namespace Docmosis.Templates.Tests
 {
     public abstract class MockedServerTests
     {
@@ -28,13 +28,13 @@ namespace Docmosis.Render.Tests
             DocmosisServer.Stop();
         }
 
-        protected void ConfigureRenderEndpoint() =>
+        protected void ConfigureListTemplatesEndpoint() =>
             DocmosisServer.Given(Request.Create()
                     .UsingPost()
-                    .WithPath("/api/render"))
+                    .WithPath("/api/listTemplates"))
                 .RespondWith(Response.Create()
                     .WithStatusCode(HttpStatusCode.OK)
-                    .WithHeader("Content-Type", "application/octet-stream")
-                    .WithBodyFromFile("sample.pdf"));
+                    .WithHeader("Content-Type", "application/json")
+                    .WithBodyFromFile("ListTemplatesResponse.json"));
     }
 }

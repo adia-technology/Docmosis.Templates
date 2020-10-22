@@ -1,3 +1,3 @@
-# Docmosis.Render
+# Docmosis.Templates
 
-A client to render documents using [Docmosis](https://www.docmosis.com)
+A client to manage document templates in [Docmosis](https://www.docmosis.com)

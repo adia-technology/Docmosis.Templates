@@ -18,10 +18,10 @@ jobs:
     deploy:
       skip_cleanup: true
       provider: script
-      script: dotnet nuget push ./src/Docmosis.Render/bin/Release/Docmosis.Render.*.nupkg
+      script: dotnet nuget push ./src/Docmosis.Templates/bin/Release/Docmosis.Templates.*.nupkg
         -s https://api.nuget.org/v3/index.json -k $NUGET_API_KEY
       on:
         branch: master
 env:
   global:
-    secure: doD1skFcdJuiy6ZhW0nKzEE6538izipsdNbXacuBAoZQLmdnwx2YKiJ9qDKUTqXxhesql7QXzRoZFcNiY9FQLRtkfB8HGn2S/fawEdLGZbH2NXTiMIBopy7g56MfNaEfEfVVoSKWco6MQpW/QiG3BQlS9djs7GDl5MiL/sxZK3fbjoBwWjL9akeEGX30dAebZ2hHIwDPSXjDK+MyHoFXO6gXN1tJa9kUrCnuoLzkojkhstUT9VfOvhauHCzLcPbyrTD9e6yDklUqpIyQRuLFeqPj398+wyyZVwsl+y241hvVx0jF+ZIFRbXMM78p2YQKzNd5eGzIpHE2+4uZLipKSJCYKRvnRdKysU4xDf3q8InqztNkH6fVoNJlb98qcjo7gvxwzBI7E7wcGdM3eUWoHQkfFUID2u4vNmwE2bmB8rzkNAAiJauhapSSXTj4Hdw9ViagWtm5vgUssD6PpVVsBrUqsKj+1NoDCYV6UrmXRGpR3JAPRssEdiTof9ga/CrcLRTPjJHIDmQEnCMg6DqEIlqw4QC0bnByf8xrSMDfbEXy+KsGfgBzoBgN+kUN4ded8UkMddTQoI1qhbxwMWsvlh2ETUVw9M0nZxUrI72xWfKjC0ThnnIzH9LUVHW9WMlLIJdzi0d4+QEfk1RPhTclYa14+K/jY72Ci/a1C2jlOOU=
+    secure: sUKhsti7yauKb/fi41CUtwtX/sGYernLb0pvvxB1+Ke4mKcq+dTuNA2QiTp9mPVXZUiMAgupy/x+juMc9B+RfoYONiCyODkAlin+//tvdAO0sUR6qLkwlEhzR7gGPd4oQ4L3ahiNQpbVtW1yFB2gxNhdvsPx8ZadvUg8Gk6H6mIBRZQ6VhkayzfWukMmZnUF9xnwEMYzbYrxKIEp1m5RjDZ1/ecfhv6X3R87f98NYRL1Mw+O61AA6TOt/Rx57HGA5aMSbNb8r6hi7TRWVPtb6GAOF+PJOISWeOLY6CAv2AkciQGlek7XOJoVSSrF64pJT8Ucvkw7fhkj+ujMOIML1piTO5bZVLrw86+FohhYtl1jwnmxSkSI4xxPGD8y9TS0qCQpksR6p/fB3n8aBeF4dJAWasmo4d6316ekveiAmH5u04BbN5s64iFPjFLgnKD3wi5VsyQoeSkgZ/b75wdM6BQb2NT1Dapd9GXTvdDKOYKhp2O8v3vX+NF4nkw+y6ry3cyQs5kS2ta5F35DvzotaQCWHLdKiVKezwSoQwAfOl9mUELNY2e5EwQ/VGlhB2dru2NbFB/eeaajzdX+knluAd5QDiBLWlcxkQWt0BbAer9/zqE0PUTdOXOCMyxW3glu8driEQ6sfu+aWgnTsd/eX05JELgVgMYgnPMTwSpRLy4=

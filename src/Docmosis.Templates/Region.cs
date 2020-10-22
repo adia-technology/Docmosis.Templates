@@ -1,5 +1,5 @@
 // ReSharper disable InconsistentNaming
-namespace Docmosis.Render
+namespace Docmosis.Templates
 {
     public enum Region
     {

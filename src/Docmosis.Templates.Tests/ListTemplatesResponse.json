@@ -1,0 +1,26 @@
+{
+  "succeeded": true,
+  "templateListStale": "false",
+  "templateList": [
+    {
+      "name": "Contracts/",
+      "lastModifiedMillisSinceEpoch": "1603375049000",
+      "lastModifiedISO8601": "2020-10-22T13:57:29+0000",
+      "sizeBytes": "0",
+      "isSystemTemplate": "false",
+      "md5": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "Contracts/en_CH/SomeFile.docx",
+      "lastModifiedMillisSinceEpoch": "1603377442000",
+      "lastModifiedISO8601": "2020-10-22T14:37:22+0000",
+      "sizeBytes": "152586",
+      "isSystemTemplate": "false",
+      "md5": "462c84773a292ffda69fd50ee4654c2c",
+      "templatePlainTextFieldPrefix": "<<",
+      "templatePlainTextFieldSuffix": ">>",
+      "templateHasErrors": "false",
+      "templateDevMode": "true"
+    }
+  ]
+}

@@ -5,3 +5,7 @@ src/Docmosis.Render.Tests/bin
 src/Docmosis.Render.Tests/obj
 src/Docmosis.Render/bin
 src/Docmosis.Render/obj
+src/Docmosis.Templates.Tests/bin
+src/Docmosis.Templates.Tests/obj
+src/Docmosis.Templates/obj
+src/Docmosis.Templates/bin

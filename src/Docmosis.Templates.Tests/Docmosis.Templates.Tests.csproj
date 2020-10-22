@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <IsPackable>false</IsPackable>
+        <RootNamespace>Docmosis.Templates.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,11 +15,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Docmosis.Render\Docmosis.Render.csproj" />
+      <ProjectReference Include="..\Docmosis.Templates\Docmosis.Templates.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Update="sample.pdf" CopyToOutputDirectory="PreserveNewest" />
+      <None Include="ListTemplatesResponse.json" CopyToOutputDirectory="Always"/>
     </ItemGroup>
 
 </Project>
