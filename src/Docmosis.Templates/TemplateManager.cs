@@ -27,10 +27,10 @@ namespace Docmosis.Templates
             {
                 formData.Add(accessKeyContent, "accessKey", "accessKey");
                 formData.Add(templateName, "templateName", "templateName");
-                var response = await client.PostAsync(_docmosisTemplatesUri + "uploadTemplate", formData);
+                var response = await client.PostAsync(_docmosisTemplatesUri + "getTemplate", formData);
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new DocmosisTemplatesError("Unable to create template");
+                    throw new DocmosisTemplatesError("Unable to get template content");
                 }
                 return await response.Content.ReadAsByteArrayAsync();
             }

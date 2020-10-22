@@ -36,5 +36,14 @@ namespace Docmosis.Templates.Tests
                     .WithStatusCode(HttpStatusCode.OK)
                     .WithHeader("Content-Type", "application/json")
                     .WithBodyFromFile("ListTemplatesResponse.json"));
+        
+        protected void ConfigureGetTemplateEndpoint() =>
+            DocmosisServer.Given(Request.Create()
+                    .UsingPost()
+                    .WithPath("/api/getTemplate"))
+                .RespondWith(Response.Create()
+                    .WithStatusCode(HttpStatusCode.OK)
+                    .WithHeader("Content-Type", "application/octet-stream")
+                    .WithBodyFromFile("FileSample.docx"));
     }
 }

@@ -19,7 +19,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="ListTemplatesResponse.json" CopyToOutputDirectory="Always"/>
+      <None Include="ListTemplatesResponse.json" CopyToOutputDirectory="Always" />
+      <None Include="FileSample.docx" CopyToOutputDirectory="Always" />
     </ItemGroup>
-
+    
 </Project>
