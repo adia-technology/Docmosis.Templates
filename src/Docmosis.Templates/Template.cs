@@ -7,7 +7,7 @@ namespace Docmosis.Templates
     {
         private readonly Lazy<Task<byte[]>> _templateGetter;
 
-        internal Template(Func<string, Task<byte[]>> templateGetter)
+        public Template(Func<string, Task<byte[]>> templateGetter)
         {
             _templateGetter = new Lazy<Task<byte[]>>(async () => await templateGetter(Name));
         }
