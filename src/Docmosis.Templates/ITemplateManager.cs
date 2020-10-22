@@ -8,5 +8,7 @@ namespace Docmosis.Templates
         Task<IReadOnlyCollection<Template>> ListTemplates();
 
         Task UploadTemplate(Template template);
+        
+        Task DeleteTemplate(string templateName);
     }
 }

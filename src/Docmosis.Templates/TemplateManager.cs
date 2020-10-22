@@ -57,10 +57,7 @@ namespace Docmosis.Templates
 
                 return parsedContent.TemplateList
                     .Where(t => int.Parse(t.SizeBytes) > 0)
-                    .Select(t => new Template(GetTemplateContent)
-                    {
-                        Name = t.Name
-                    }).ToList();
+                    .Select(t => new Template(t.Name, GetTemplateContent)).ToList();
             }
         }
 
@@ -82,6 +79,24 @@ namespace Docmosis.Templates
                     throw new DocmosisTemplatesError("Unable to create template");
                 }
             }
+        }
+
+        public async Task DeleteTemplate(string templateName)
+        {
+            HttpContent accessKeyContent = new StringContent(_accessKey);
+            HttpContent templateNameContent = new StringContent(templateName);
+
+            using (var client = new HttpClient())
+            using (var formData = new MultipartFormDataContent())
+            {
+                formData.Add(accessKeyContent, "accessKey", "accessKey");
+                formData.Add(templateNameContent, "templateName", "templateName");
+                var response = await client.PostAsync(_docmosisTemplatesUri + "deleteTemplate", formData);
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new DocmosisTemplatesError("Unable to delete template");
+                }
+            }        
         }
     }
 }
